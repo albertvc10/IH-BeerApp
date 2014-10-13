@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BeersViewController.h
 //  Beer App
 //
 //  Created by Albert Villanueva Carreras on 13/10/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface BeersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSArray *arrayBeers;
 
 @end
-

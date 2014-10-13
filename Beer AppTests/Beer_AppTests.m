@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "BeerInfo.h"
+#import "Beer.h"
 
 @interface Beer_AppTests : XCTestCase
 
@@ -15,26 +17,45 @@
 
 @implementation Beer_AppTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+- (void)testIfBeerInitMethodNotNil {
+
+    BeerInfo *newBeer = [[BeerInfo alloc] init];
+    
+    XCTAssertNotNil(newBeer);
+    
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+- (void)testIfBeerInitMethodReturnsDefaultName {
+    
+    NSString *name = @"Unknown Beer";
+    
+    BeerInfo *newBeer = [[BeerInfo alloc] init];
+    
+    XCTAssertEqualObjects(name, newBeer.name);
+    
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+
+
+- (void)testIfBeerWithNameInitNotNil {
+    
+    NSString *name = @"Duff";
+    
+    BeerInfo *newBeer = [[BeerInfo alloc] initWithName:name];
+    
+    XCTAssertNotNil(newBeer);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testIfAllBeersMethodReturnsSomething {
+    
+    Beer *b = [[Beer alloc] init];
+    
+    XCTAssertNotNil([b allBeers]);
+    
 }
+
+
+
+
 
 @end

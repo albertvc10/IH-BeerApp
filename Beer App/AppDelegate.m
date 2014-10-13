@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "BeersViewController.h"
+#import "Beer.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    BeersViewController *vc = [[BeersViewController alloc] init];
+    
+    [self.window setRootViewController:vc];
+    
+    [self.window makeKeyAndVisible];
+    
+    Beer *b = [[Beer alloc]init];
+    
+    [vc setArrayBeers:[b allBeers]];
+    
     return YES;
 }
 

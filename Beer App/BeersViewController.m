@@ -20,6 +20,16 @@
 @implementation BeersViewController
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +38,8 @@
     self.title = @"Beer List";
     
     [self addBeerButtonToNavigationBar];
+    
+
 }
 
 - (void)addBeerButtonToNavigationBar {
@@ -35,11 +47,15 @@
     UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewBeerButtonPressed)];
     [self.navigationItem setRightBarButtonItem:b];
     
+   
+    
 }
 
 - (void)addNewBeerButtonPressed {
     
     BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
+    
+
     
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -102,6 +118,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
+    
+    BeerInfo *b = [self.arrayBeers objectAtIndex:indexPath.row];
+    
+    [vc setDetailBeer:b];
     
     [self.navigationController pushViewController:vc animated:YES];
 }

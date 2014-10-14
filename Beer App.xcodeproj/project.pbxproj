@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5012918619EC796000634F2F /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 5012918419EC796000634F2F /* Readme.md */; };
 		5012918719EC796000634F2F /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5012918519EC796000634F2F /* TemplateIcon2x.png */; };
 		502439D519ED0A6400DE3702 /* BeerList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502439D419ED0A6400DE3702 /* BeerList.plist */; };
 		502439D919ED13BC00DE3702 /* BeerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502439D719ED13BC00DE3702 /* BeerDetailViewController.m */; };
@@ -34,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5012918419EC796000634F2F /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = "Beer App/Readme.md"; sourceTree = "<group>"; };
 		5012918519EC796000634F2F /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		502439D419ED0A6400DE3702 /* BeerList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BeerList.plist; sourceTree = "<group>"; };
 		502439D619ED13BC00DE3702 /* BeerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeerDetailViewController.h; path = Controller/BeerDetailViewController.h; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		5088334919EBE60E00D3AF08 = {
 			isa = PBXGroup;
 			children = (
-				5012918419EC796000634F2F /* Readme.md */,
 				5088335419EBE60E00D3AF08 /* Beer App */,
 				5088336E19EBE60E00D3AF08 /* Beer AppTests */,
 				5088335319EBE60E00D3AF08 /* Products */,
@@ -275,7 +272,6 @@
 			files = (
 				5088338219EBFD9600D3AF08 /* Beer.m in Sources */,
 				5088335B19EBE60E00D3AF08 /* AppDelegate.m in Sources */,
-				5012918619EC796000634F2F /* Readme.md in Sources */,
 				5088335819EBE60E00D3AF08 /* main.m in Sources */,
 				502439D919ED13BC00DE3702 /* BeerDetailViewController.m in Sources */,
 				5088338A19EC052600D3AF08 /* BeersViewController.m in Sources */,

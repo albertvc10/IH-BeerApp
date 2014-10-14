@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSString *countryOrigin;
 
-@property (nonatomic, strong) NSNumber *alcoholGrade;
+@property (nonatomic) NSNumber *alcoholGrade;
 
 @property (nonatomic, strong) NSString *photoUrl;
 

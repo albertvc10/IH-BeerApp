@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Albert Villanueva Carreras. All rights reserved.
 //
 
-#import "Beer.h"
-#import "BeerInfo.h"
+#import "Beers.h"
 
-@implementation Beer
+
+@implementation Beers
 
 - (NSArray *)allBeers {
     
@@ -17,7 +17,7 @@
     
     NSArray *userList = [NSArray arrayWithContentsOfFile:filePath];
     
-    self.arrayBeers = [[NSMutableArray alloc]init];
+    self.arrayOfBeers = [[NSMutableArray alloc]init];
     
     for (NSDictionary *d in userList) {
         BeerInfo *b = [[BeerInfo alloc] init];
@@ -30,9 +30,13 @@
         
         b.photoUrl = [d valueForKey:@"photoUrl"];
         
-        [self.arrayBeers addObject:b];
+        [self.arrayOfBeers addObject:b];
     }
-    return self.arrayBeers;
+    return self.arrayOfBeers;
 }
 
+- (void)addBeers:(BeerInfo *)beer {
+
+    
+}
 @end

@@ -8,12 +8,14 @@
 
 #import "BeersViewController.h"
 #import "BeerInfo.h"
-#import "Beer.h"
-#import "BeerDetailViewController.h"
+#import "Beers.h"
+
 
 #define BEERS_SECTION 1
 
 @interface BeersViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -47,15 +49,14 @@
     UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewBeerButtonPressed)];
     [self.navigationItem setRightBarButtonItem:b];
     
-   
-    
+
 }
 
 - (void)addNewBeerButtonPressed {
     
     BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
     
-
+    vc.delegate = self;
     
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -83,7 +84,10 @@
     UIImage *image;
     NSData *data;
     NSURL *url;
-    for (BeerInfo *b in self.arrayBeers) {
+    
+    BeerInfo *b = [self.arrayBeers objectAtIndex:indexPath.row];
+    
+
        
         NSLog(@"name: %@", b.name);
         
@@ -93,7 +97,7 @@
         data = [NSData dataWithContentsOfURL:url];
         image = [[UIImage alloc] initWithData:data];
         cell.imageView.image = image;
-    }
+
     
     return cell;
     
@@ -119,10 +123,29 @@
     
     BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
     
-    BeerInfo *b = [self.arrayBeers objectAtIndex:indexPath.row];
+    BeerInfo *b = [self.arrayBeers  objectAtIndex:indexPath.row];
+    NSLog(@"%@", b);
     
     [vc setDetailBeer:b];
+    vc.delegate = self;
     
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+#pragma mark Edit Beer Delegate methods
+
+- (void)editBeerDidFinish:(BeerInfo *)beer {
+    
+#warning fix side effect and do it right
+    [self.tableView reloadData];
+}
+
+- (void)addBeerDidiFinish:(BeerInfo *)beer {
+    
+    [self.arrayBeers addObject:beer];
+    [self.tableView reloadData];
+}
+
+
 @end

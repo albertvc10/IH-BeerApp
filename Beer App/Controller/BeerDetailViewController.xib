@@ -25,9 +25,6 @@
                         <action selector="cancelButton:" destination="-1" eventType="touchUpInside" id="L2h-iG-44N"/>
                     </connections>
                 </button>
-                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-hz-4pZ">
-                    <rect key="frame" x="0.0" y="276" width="600" height="162"/>
-                </pickerView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlX-Hf-aUx">
                     <rect key="frame" x="141" y="189" width="318" height="30"/>
                     <constraints>
@@ -36,6 +33,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-hz-4pZ">
+                    <rect key="frame" x="0.0" y="276" width="600" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="A6d-MW-MPG"/>
+                        <outlet property="delegate" destination="-1" id="rNM-oB-uRd"/>
+                    </connections>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

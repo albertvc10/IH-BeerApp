@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BeerInfo.h"
 
-@interface Beer : NSObject
+@interface Beers : NSObject
 
-@property (nonatomic, strong) NSMutableArray *arrayBeers;
+@property (nonatomic, strong) NSMutableArray *arrayOfBeers;
 
 - (NSArray *)allBeers;
+
+- (void)addBeers:(BeerInfo *)beer;
+
 @end

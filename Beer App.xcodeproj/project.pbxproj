@@ -17,7 +17,7 @@
 		5088336619EBE60E00D3AF08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5088336419EBE60E00D3AF08 /* LaunchScreen.xib */; };
 		5088337219EBE60E00D3AF08 /* Beer_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088337119EBE60E00D3AF08 /* Beer_AppTests.m */; };
 		5088337D19EBE66800D3AF08 /* BeerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088337C19EBE66800D3AF08 /* BeerInfo.m */; };
-		5088338219EBFD9600D3AF08 /* Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088338119EBFD9600D3AF08 /* Beer.m */; };
+		5088338219EBFD9600D3AF08 /* Beers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088338119EBFD9600D3AF08 /* Beers.m */; };
 		5088338A19EC052600D3AF08 /* BeersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088338819EC052600D3AF08 /* BeersViewController.m */; };
 		5088338B19EC052600D3AF08 /* BeersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5088338919EC052600D3AF08 /* BeersViewController.xib */; };
 /* End PBXBuildFile section */
@@ -50,8 +50,8 @@
 		5088337119EBE60E00D3AF08 /* Beer_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beer_AppTests.m; sourceTree = "<group>"; };
 		5088337B19EBE66800D3AF08 /* BeerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeerInfo.h; path = Model/BeerInfo.h; sourceTree = "<group>"; };
 		5088337C19EBE66800D3AF08 /* BeerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerInfo.m; path = Model/BeerInfo.m; sourceTree = "<group>"; };
-		5088338019EBFD9600D3AF08 /* Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Beer.h; path = Model/Beer.h; sourceTree = "<group>"; };
-		5088338119EBFD9600D3AF08 /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Beer.m; path = Model/Beer.m; sourceTree = "<group>"; };
+		5088338019EBFD9600D3AF08 /* Beers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Beers.h; path = Model/Beers.h; sourceTree = "<group>"; };
+		5088338119EBFD9600D3AF08 /* Beers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Beers.m; path = Model/Beers.m; sourceTree = "<group>"; };
 		5088338719EC052600D3AF08 /* BeersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersViewController.h; sourceTree = "<group>"; };
 		5088338819EC052600D3AF08 /* BeersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersViewController.m; sourceTree = "<group>"; };
 		5088338919EC052600D3AF08 /* BeersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeersViewController.xib; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 			children = (
 				5088337B19EBE66800D3AF08 /* BeerInfo.h */,
 				5088337C19EBE66800D3AF08 /* BeerInfo.m */,
-				5088338019EBFD9600D3AF08 /* Beer.h */,
-				5088338119EBFD9600D3AF08 /* Beer.m */,
+				5088338019EBFD9600D3AF08 /* Beers.h */,
+				5088338119EBFD9600D3AF08 /* Beers.m */,
 				502439D419ED0A6400DE3702 /* BeerList.plist */,
 			);
 			name = Model;
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5088338219EBFD9600D3AF08 /* Beer.m in Sources */,
+				5088338219EBFD9600D3AF08 /* Beers.m in Sources */,
 				5088335B19EBE60E00D3AF08 /* AppDelegate.m in Sources */,
 				5088335819EBE60E00D3AF08 /* main.m in Sources */,
 				502439D919ED13BC00DE3702 /* BeerDetailViewController.m in Sources */,

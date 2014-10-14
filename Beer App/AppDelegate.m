@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BeersViewController.h"
-#import "Beer.h"
+#import "Beers.h"
 
 @interface AppDelegate ()
 
@@ -35,7 +35,7 @@
     
     //Create and inject list of Beers in the VC
     
-    Beer *b = [[Beer alloc]init];
+    Beers *b = [[Beers alloc]init];
     
     [vc setArrayBeers:[b allBeers]];
     

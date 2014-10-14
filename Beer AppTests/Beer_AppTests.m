@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "BeerInfo.h"
-#import "Beer.h"
+#import "Beers.h"
 
 @interface Beer_AppTests : XCTestCase
 
@@ -48,7 +48,7 @@
 
 - (void)testIfAllBeersMethodReturnsSomething {
     
-    Beer *b = [[Beer alloc] init];
+    Beers *b = [[Beers alloc] init];
     
     XCTAssertNotNil([b allBeers]);
     

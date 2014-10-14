@@ -1,11 +1,3 @@
-//
-//  BeerDetailViewController.m
-//  Beer App
-//
-//  Created by Albert Villanueva Carreras on 14/10/14.
-//  Copyright (c) 2014 Albert Villanueva Carreras. All rights reserved.
-//
-
 #import "BeerDetailViewController.h"
 
 typedef enum {
@@ -55,22 +47,44 @@ typedef enum {
 {
     [super viewWillAppear:YES];
     
-    if (self.detailBeer) {
+    if (self.detailBeer == nil) {
         self.editingMode = ADDING_BEER;
+
     }
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
     
     if (self.editingMode == EDITING_BEER) {
         self.nameTextField.text = self.detailBeer.name;
+        NSUInteger grade = [self.detailBeer.alcoholGrade integerValue];
+        [self.gradePicker selectRow:grade inComponent:0 animated:YES];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    
+    if (self.editingMode == ADDING_BEER) {
+        self.detailBeer = [[BeerInfo alloc] init];
+    }
+    
+    
     self.detailBeer.name = self.nameTextField.text;
+
+    if (self.editingMode == EDITING_BEER) {
+        if ([self.delegate respondsToSelector:@selector(editBeerDidFinish:)]) {
+            [self.delegate editBeerDidFinish:self.detailBeer];
+        }
+    }
+    if (self.editingMode == ADDING_BEER) {
+        if ([self.delegate respondsToSelector:@selector(addBeerDidiFinish:)]) {
+            [self.delegate addBeerDidiFinish:self.detailBeer];
+        }
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -84,4 +98,35 @@ typedef enum {
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+#pragma mark Picker View Delegate Methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+    
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return 101;
+    
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    NSString *s = [NSString stringWithFormat:@"🍺 %lu º", row];
+    
+    return s;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    self.detailBeer.alcoholGrade = [NSNumber numberWithInteger:row];
+
+}
+
+
 @end
+

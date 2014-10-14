@@ -13,7 +13,7 @@
 
 - (NSArray *)allBeers {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"BeerList" ofType:@"plist"];
     
     NSArray *userList = [NSArray arrayWithContentsOfFile:filePath];
     

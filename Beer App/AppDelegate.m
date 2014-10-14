@@ -24,9 +24,16 @@
     
     BeersViewController *vc = [[BeersViewController alloc] init];
     
-    [self.window setRootViewController:vc];
+    
+    // nav controller
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self.window setRootViewController:nav];
     
     [self.window makeKeyAndVisible];
+    
+    //Create and inject list of Beers in the VC
     
     Beer *b = [[Beer alloc]init];
     

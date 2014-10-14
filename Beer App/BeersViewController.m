@@ -9,6 +9,7 @@
 #import "BeersViewController.h"
 #import "BeerInfo.h"
 #import "Beer.h"
+#import "BeerDetailViewController.h"
 
 #define BEERS_SECTION 1
 
@@ -23,6 +24,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"Beer List";
+    
+    [self addBeerButtonToNavigationBar];
+}
+
+- (void)addBeerButtonToNavigationBar {
+    
+    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewBeerButtonPressed)];
+    [self.navigationItem setRightBarButtonItem:b];
+    
+}
+
+- (void)addNewBeerButtonPressed {
+    
+    BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,17 +86,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *name = [NSString stringWithFormat:@"Beer Name: %@", [[self.arrayBeers objectAtIndex:indexPath.row]name]];
+//    NSString *name = [NSString stringWithFormat:@"Beer Name: %@", [[self.arrayBeers objectAtIndex:indexPath.row]name]];
+//    
+//    NSString *row = [NSString stringWithFormat:@"Row tapped: %lu", indexPath.row];
+//    
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:name message:row preferredStyle:UIAlertControllerStyleActionSheet];
+//    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//        [alert dismissViewControllerAnimated:YES completion:nil];
+//    }];
+//    
+//    [alert addAction:ok];
+//    
+//    [self presentViewController:alert animated:YES completion:nil];
     
-    NSString *row = [NSString stringWithFormat:@"Row tapped: %lu", indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:name message:row preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    }];
+    BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
     
-    [alert addAction:ok];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

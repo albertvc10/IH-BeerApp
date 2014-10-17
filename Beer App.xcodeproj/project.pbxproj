@@ -10,7 +10,8 @@
 		5012918719EC796000634F2F /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5012918519EC796000634F2F /* TemplateIcon2x.png */; };
 		502439D519ED0A6400DE3702 /* BeerList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502439D419ED0A6400DE3702 /* BeerList.plist */; };
 		502439D919ED13BC00DE3702 /* BeerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502439D719ED13BC00DE3702 /* BeerDetailViewController.m */; };
-		502439DA19ED13BC00DE3702 /* BeerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502439D819ED13BC00DE3702 /* BeerDetailViewController.xib */; };
+		502BF6F219F10E37002071E1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BF6F419F10E37002071E1 /* MainStoryboard.storyboard */; };
+		502BF70119F12874002071E1 /* Flag.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 502BF70319F12874002071E1 /* Flag.jpeg */; };
 		5088335819EBE60E00D3AF08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088335719EBE60E00D3AF08 /* main.m */; };
 		5088335B19EBE60E00D3AF08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088335A19EBE60E00D3AF08 /* AppDelegate.m */; };
 		5088336319EBE60E00D3AF08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5088336219EBE60E00D3AF08 /* Images.xcassets */; };
@@ -19,7 +20,7 @@
 		5088337D19EBE66800D3AF08 /* BeerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088337C19EBE66800D3AF08 /* BeerInfo.m */; };
 		5088338219EBFD9600D3AF08 /* Beers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088338119EBFD9600D3AF08 /* Beers.m */; };
 		5088338A19EC052600D3AF08 /* BeersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088338819EC052600D3AF08 /* BeersViewController.m */; };
-		5088338B19EC052600D3AF08 /* BeersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5088338919EC052600D3AF08 /* BeersViewController.xib */; };
+		50FE12B319EED0E700B79944 /* BeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE12B219EED0E700B79944 /* BeerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,11 @@
 		502439D419ED0A6400DE3702 /* BeerList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BeerList.plist; sourceTree = "<group>"; };
 		502439D619ED13BC00DE3702 /* BeerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeerDetailViewController.h; path = Controller/BeerDetailViewController.h; sourceTree = "<group>"; };
 		502439D719ED13BC00DE3702 /* BeerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerDetailViewController.m; path = Controller/BeerDetailViewController.m; sourceTree = "<group>"; };
-		502439D819ED13BC00DE3702 /* BeerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeerDetailViewController.xib; path = Controller/BeerDetailViewController.xib; sourceTree = "<group>"; };
+		502BF6F319F10E37002071E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		502BF6F519F10E73002071E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		502BF70019F11D94002071E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
+		502BF70219F12874002071E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = Base.lproj/Flag.jpeg; sourceTree = "<group>"; };
+		502BF70419F12875002071E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = es; path = es.lproj/Flag.jpeg; sourceTree = "<group>"; };
 		5088335219EBE60E00D3AF08 /* Beer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5088335619EBE60E00D3AF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5088335719EBE60E00D3AF08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,7 +59,8 @@
 		5088338119EBFD9600D3AF08 /* Beers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Beers.m; path = Model/Beers.m; sourceTree = "<group>"; };
 		5088338719EC052600D3AF08 /* BeersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersViewController.h; sourceTree = "<group>"; };
 		5088338819EC052600D3AF08 /* BeersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersViewController.m; sourceTree = "<group>"; };
-		5088338919EC052600D3AF08 /* BeersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeersViewController.xib; sourceTree = "<group>"; };
+		50FE12B119EED0E700B79944 /* BeerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerCell.h; sourceTree = "<group>"; };
+		50FE12B219EED0E700B79944 /* BeerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		5088335419EBE60E00D3AF08 /* Beer App */ = {
 			isa = PBXGroup;
 			children = (
+				502BF70319F12874002071E1 /* Flag.jpeg */,
 				5088335919EBE60E00D3AF08 /* AppDelegate.h */,
 				5088335A19EBE60E00D3AF08 /* AppDelegate.m */,
 				5088337E19EBE67000D3AF08 /* Model */,
@@ -160,9 +167,10 @@
 		5088337F19EBE67900D3AF08 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5088338919EC052600D3AF08 /* BeersViewController.xib */,
-				502439D819ED13BC00DE3702 /* BeerDetailViewController.xib */,
 				5088336419EBE60E00D3AF08 /* LaunchScreen.xib */,
+				502BF6F419F10E37002071E1 /* MainStoryboard.storyboard */,
+				50FE12B119EED0E700B79944 /* BeerCell.h */,
+				50FE12B219EED0E700B79944 /* BeerCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 5088334919EBE60E00D3AF08;
 			productRefGroup = 5088335319EBE60E00D3AF08 /* Products */;
@@ -248,11 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5012918719EC796000634F2F /* TemplateIcon2x.png in Resources */,
-				5088338B19EC052600D3AF08 /* BeersViewController.xib in Resources */,
 				502439D519ED0A6400DE3702 /* BeerList.plist in Resources */,
-				502439DA19ED13BC00DE3702 /* BeerDetailViewController.xib in Resources */,
+				502BF6F219F10E37002071E1 /* MainStoryboard.storyboard in Resources */,
 				5088336619EBE60E00D3AF08 /* LaunchScreen.xib in Resources */,
 				5088336319EBE60E00D3AF08 /* Images.xcassets in Resources */,
+				502BF70119F12874002071E1 /* Flag.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +283,7 @@
 				5088335B19EBE60E00D3AF08 /* AppDelegate.m in Sources */,
 				5088335819EBE60E00D3AF08 /* main.m in Sources */,
 				502439D919ED13BC00DE3702 /* BeerDetailViewController.m in Sources */,
+				50FE12B319EED0E700B79944 /* BeerCell.m in Sources */,
 				5088338A19EC052600D3AF08 /* BeersViewController.m in Sources */,
 				5088337D19EBE66800D3AF08 /* BeerInfo.m in Sources */,
 			);
@@ -298,10 +308,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		502BF6F419F10E37002071E1 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502BF6F319F10E37002071E1 /* Base */,
+				502BF70019F11D94002071E1 /* es */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		502BF70319F12874002071E1 /* Flag.jpeg */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502BF70219F12874002071E1 /* Base */,
+				502BF70419F12875002071E1 /* es */,
+			);
+			name = Flag.jpeg;
+			sourceTree = "<group>";
+		};
 		5088336419EBE60E00D3AF08 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5088336519EBE60E00D3AF08 /* Base */,
+				502BF6F519F10E73002071E1 /* es */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

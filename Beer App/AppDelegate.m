@@ -20,24 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    BeersViewController *vc = [[BeersViewController alloc] init];
-    
-    
-    // nav controller
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    [self.window setRootViewController:nav];
-    
-    [self.window makeKeyAndVisible];
-    
+#warning REMEMBER ME
     //Create and inject list of Beers in the VC
     
     Beers *b = [[Beers alloc]init];
     
-    [vc setArrayBeers:[b allBeers]];
+//    [vc setArrayBeers:[b allBeers]];
     
     return YES;
 }

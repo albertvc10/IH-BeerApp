@@ -10,6 +10,19 @@
 
 @implementation BeerInfo
 
++ (BeerInfo *)beerWithName:(NSString *)name {
+    
+    BeerInfo *b = [[BeerInfo alloc] initWithName:name];
+    
+    return b;
+}
+
++ (BeerInfo *)beer {
+    
+    return [self beerWithName:@"jdhsd"];
+    
+}
+
 - (instancetype)init
 {
     self = [super init];

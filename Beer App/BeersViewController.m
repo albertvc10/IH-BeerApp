@@ -1,21 +1,12 @@
-//
-//  BeersViewController.m
-//  Beer App
-//
-//  Created by Albert Villanueva Carreras on 13/10/14.
-//  Copyright (c) 2014 Albert Villanueva Carreras. All rights reserved.
-//
-
 #import "BeersViewController.h"
 #import "BeerInfo.h"
 #import "Beers.h"
+#import "BeerCell.h"
 
 
 #define BEERS_SECTION 1
 
 @interface BeersViewController ()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -37,20 +28,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Beer List";
+//    self.title = @"Beer List";
     
-    [self addBeerButtonToNavigationBar];
+#warning REMEMBER TO CLEAN THIS CORPSE
+    //Create and inject list of Beers in the VC
     
-
-}
-
-- (void)addBeerButtonToNavigationBar {
+    Beers *b = [[Beers alloc]init];
     
-    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewBeerButtonPressed)];
-    [self.navigationItem setRightBarButtonItem:b];
+    
+    [self setArrayBeers:[b allBeers]];
     
 
 }
+
+
 
 - (void)addNewBeerButtonPressed {
     
@@ -74,64 +65,67 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell;
+    BeerCell *cell;
     
-    cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"myCell"];
-    }
+    cell = [tableView dequeueReusableCellWithIdentifier:@"BeerCell"];
     
-    UIImage *image;
-    NSData *data;
-    NSURL *url;
     
     BeerInfo *b = [self.arrayBeers objectAtIndex:indexPath.row];
     
-
-       
         NSLog(@"name: %@", b.name);
-        
-        cell.textLabel.text = b.name;
-        cell.detailTextLabel.text = b.countryOrigin;
-        url = [NSURL URLWithString:b.photoUrl];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [[UIImage alloc] initWithData:data];
-        cell.imageView.image = image;
-
+    
+    cell.beer = b;
     
     return cell;
     
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    NSString *name = [NSString stringWithFormat:@"Beer Name: %@", [[self.arrayBeers objectAtIndex:indexPath.row]name]];
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
-//    NSString *row = [NSString stringWithFormat:@"Row tapped: %lu", indexPath.row];
+////    NSString *name = [NSString stringWithFormat:@"Beer Name: %@", [[self.arrayBeers objectAtIndex:indexPath.row]name]];
+////    
+////    NSString *row = [NSString stringWithFormat:@"Row tapped: %lu", indexPath.row];
+////    
+////    UIAlertController *alert = [UIAlertController alertControllerWithTitle:name message:row preferredStyle:UIAlertControllerStyleActionSheet];
+////    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+////        [alert dismissViewControllerAnimated:YES completion:nil];
+////    }];
+////    
+////    [alert addAction:ok];
+////    
+////    [self presentViewController:alert animated:YES completion:nil];
 //    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:name message:row preferredStyle:UIAlertControllerStyleActionSheet];
-//    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        [alert dismissViewControllerAnimated:YES completion:nil];
-//    }];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    
-//    [alert addAction:ok];
+//    BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
 //    
-//    [self presentViewController:alert animated:YES completion:nil];
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    BeerDetailViewController *vc = [[BeerDetailViewController alloc] init];
-    
-    BeerInfo *b = [self.arrayBeers  objectAtIndex:indexPath.row];
-    NSLog(@"%@", b);
-    
-    [vc setDetailBeer:b];
-    vc.delegate = self;
-    
-    [self.navigationController pushViewController:vc animated:YES];
-}
+//    BeerInfo *b = [self.arrayBeers  objectAtIndex:indexPath.row];
+//    NSLog(@"%@", b);
+//    
+//    [vc setDetailBeer:b];
+//    vc.delegate = self;
+//    
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"AddBeerSegue"]) {
+        BeerDetailViewController *vc = (BeerDetailViewController *)[segue destinationViewController];
+        
+        vc.delegate = self;
+    }
+    if ([[segue identifier] isEqualToString:@"editBeerSegue"]) {
+        BeerDetailViewController *vc2 = (BeerDetailViewController *)[segue destinationViewController];
+        
+        BeerInfo *b = [self.arrayBeers objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+
+        vc2.detailBeer = b;
+    }
+    
+}
 
 #pragma mark Edit Beer Delegate methods
 

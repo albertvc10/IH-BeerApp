@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BeerDetailViewController.h"
 
-@interface BeersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, EditBeerDelegate>
+@interface BeersViewController : UITableViewController <EditBeerDelegate>
 
 
 @property (nonatomic, strong) NSMutableArray *arrayBeers;

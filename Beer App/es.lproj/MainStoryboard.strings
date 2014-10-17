@@ -1,0 +1,19 @@
+
+/* Class = "IBUILabel"; text = "Name of my beer"; ObjectID = "5pl-BT-dzh"; */
+"5pl-BT-dzh.text" = "Name of my beer";
+
+/* Class = "IBUINavigationItem"; title = "Duff Land"; ObjectID = "MHx-vt-KGI"; */
+"MHx-vt-KGI.title" = "Duff Landia";
+
+/* Class = "IBUITextField"; placeholder = "name"; ObjectID = "XSf-z4-eCR"; */
+"XSf-z4-eCR.placeholder" = "Nombre";
+
+/* Class = "IBUILabel"; text = "Detail Of the beer"; ObjectID = "lMg-rx-fNZ"; */
+"lMg-rx-fNZ.text" = "Detail Of the beer";
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "wau-qb-dLX"; */
+"wau-qb-dLX.normalTitle" = "Cancelar";
+
+/* Class = "IBUILabel"; text = "This is English"; ObjectID = "oVZ-bK-s7M"; */
+"oVZ-bK-s7M.text" = "Esto es inglés";
+

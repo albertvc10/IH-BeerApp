@@ -54,7 +54,14 @@
     
 }
 
-
+//- (void) testBeerClassMethods {
+//    
+//    
+//    BeerInfo *b1 = [BeerInfo beerWithName:@""];
+//    
+//    
+//    
+//}
 
 
 
